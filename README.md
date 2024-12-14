@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-Visit
+Visit `https://robertguglielmino.github.io/product-page` to see it.
 
 ## Notes
 
@@ -21,8 +21,8 @@ The grid of products will handle viewport changes.
    echo "YOUR_GITHUB_PAT" | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
 2. Pull the latest image
    ```bash
-   docker pull ghcr.io/RobertGuglielmino/YOUR_REPO:latest
+   docker pull ghcr.io/RobertGuglielmino/product-page:latest
 3. Run the container
    ```bash
-    docker run -p 3000:3000 ghcr.io/RobertGuglielmino/YOUR_REPO:latest
+    docker run -p 3000:3000 ghcr.io/RobertGuglielmino/product-page:latest
 4. Visit `http://localhost:3000` in your browser
