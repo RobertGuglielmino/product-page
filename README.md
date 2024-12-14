@@ -2,35 +2,27 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+Visit
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Notes
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Unfortunately, NextJS is no longer compatible with MikroORM. Due to time constraints, MikroORM was not implemented, but the implementation in the code is still there for the user's enjoyment. Mock data has been put in it's place instead. If you click "Add to Cart", the console will print out the appropriate product and quantity.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Currently, the product quantity can go to -1. oops!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The grid of products will handle viewport changes.
 
-## Learn More
+`robots.txt` provides basic SEO stuff.
 
-To learn more about Next.js, take a look at the following resources:
+# Running with Docker
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Log in to GitHub Container Registry:
+   ```bash
+   echo "YOUR_GITHUB_PAT" | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
+2. Pull the latest image
+   ```bash
+   docker pull ghcr.io/RobertGuglielmino/YOUR_REPO:latest
+3. Run the container
+   ```bash
+    docker run -p 3000:3000 ghcr.io/RobertGuglielmino/YOUR_REPO:latest
+4. Visit `http://localhost:3000` in your browser
