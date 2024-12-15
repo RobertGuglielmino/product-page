@@ -1,8 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-Visit `https://robertguglielmino.github.io/product-page` to see it.
 
 ## Notes
 
@@ -10,19 +5,29 @@ Unfortunately, NextJS is no longer compatible with MikroORM. Due to time constra
 
 Currently, the product quantity can go to -1. oops!
 
-The grid of products will handle viewport changes.
+The grid of products will handle viewport changes, with 5 columns in landscape and 3 columns in portrait
 
-`robots.txt` provides basic SEO stuff.
+`robots.txt` provides basic SEO stuff. I would've liked to experiment more with server rendering to get TTFB and LCP faster but oh well
+
+# Running with NPM
+
+1. Install dependencies:
+   ```bash
+   npm install
+2. Build the application:
+   ```bash
+   npm run build
+3. Start the application:
+   ```bash
+   npm run start
+4. Visit `http://localhost:3000` in your browser
 
 # Running with Docker
 
-1. Log in to GitHub Container Registry:
+1. Build the Image:
    ```bash
-   echo "YOUR_GITHUB_PAT" | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
-2. Pull the latest image
+   docker build -t product-page .
+2. Start the Image:
    ```bash
-   docker pull ghcr.io/RobertGuglielmino/product-page:latest
-3. Run the container
-   ```bash
-    docker run -p 3000:3000 ghcr.io/RobertGuglielmino/product-page:latest
-4. Visit `http://localhost:3000` in your browser
+   docker run -d -p 3000:3000 product-page
+3. Visit `http://localhost:3000` in your browser
